@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lőrinczi Dental · Marosvásárhely — látványterv</title>
+<meta name="description" content="Lőrinczi Dental — Fogászat, Marosvásárhely. Online időpontfoglalás.">
+<meta property="og:title" content="Lőrinczi Dental · Marosvásárhely">
+<meta property="og:description" content="Weboldal-látványterv online időpontfoglalással">
+<meta property="og:image" content="https://bucu135.github.io/previews/lorinczi-dental/og.jpg">
+<meta property="og:url" content="https://bucu135.github.io/previews/lorinczi-dental/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%230E3A3B'/><text x='32' y='45' font-family='Georgia' font-size='38' font-weight='700' text-anchor='middle' fill='%23F5F1E8'>L</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600..900&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E3A3B; --ink-2:#082829; --cream:#F5F1E8; --paper:#FBF9F4; --mint:#A9D8CB; --mint-2:#D9EEE7;
+  --txt:#1B2A29; --txt-2:#3E4F4D; --acc:#1D6B5F; --line:rgba(14,58,59,.14);
+  --t-display:'Bodoni Moda', Georgia, serif; --t-serif:'Newsreader', Georgia, serif; --t-body:'Instrument Sans', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font:500 17px/1.6 var(--t-body);color:var(--txt);background:var(--cream);overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1180px, 100% - 48px);margin-inline:auto}
+.demo{background:var(--ink-2);color:var(--mint-2);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.01em}
+
+/* fejléc — lebeg, nincs sáv */
+.hd{position:absolute;inset:auto 0 auto 0;z-index:5;padding:22px 0}
+.hd .wrap{display:flex;align-items:center;gap:28px}
+.logo{display:flex;flex-direction:column;line-height:1.15;text-decoration:none;color:var(--cream);margin-right:auto}
+.logo b{font:800 22px/1.15 var(--t-display);font-variation-settings:"opsz" 24}
+.logo small{font-size:13px;color:var(--mint);font-weight:600;letter-spacing:.02em}
+.nav{display:flex;gap:24px}
+.nav a{text-decoration:none;color:var(--cream);font-size:15px;font-weight:600;opacity:.85}
+.nav a:hover{opacity:1}
+.lang{display:flex;border:1px solid rgba(245,241,232,.35);border-radius:99px;padding:3px}
+.lang button{font-size:13px;font-weight:700;color:var(--cream);padding:5px 11px;border-radius:99px}
+.lang button[aria-pressed=true]{background:var(--cream);color:var(--ink)}
+.hd-tel{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;padding:10px 18px;border-radius:99px}
+
+/* hero */
+.hero{background:radial-gradient(1200px 600px at 85% 20%, #175352 0%, transparent 60%),radial-gradient(800px 500px at 0% 100%, #0b3132 0%, transparent 70%),var(--ink);color:var(--cream);padding:150px 0 140px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.eyebrow{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mint)}
+.nev{font:900 clamp(52px, 7.2vw, 104px)/1.14 var(--t-display);font-variation-settings:"opsz" 96;letter-spacing:-.01em;margin:18px 0 22px;text-wrap:balance}
+.nev-kicsi{font-size:clamp(46px, 6vw, 84px)}
+.nev-hosszu{font-size:clamp(42px, 5vw, 72px)}
+.nev .alc{display:block;font:500 clamp(22px, 2.4vw, 30px)/1.3 var(--t-serif);color:var(--mint);letter-spacing:0;margin-top:10px}
+.lead{font:500 clamp(19px, 1.7vw, 22px)/1.55 var(--t-serif);color:rgba(245,241,232,.9);max-width:34ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:99px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .2s, background .2s}
+.btn:active{transform:scale(.98)}
+.btn-1{background:var(--cream);color:var(--ink)}
+.btn-1:hover{background:#fff}
+.btn-2{border:1.5px solid rgba(245,241,232,.4);color:var(--cream)}
+.btn-2:hover{border-color:var(--cream)}
+.rate{margin-top:26px;font-size:15px;color:rgba(245,241,232,.75);font-variant-numeric:lining-nums tabular-nums}
+
+/* foglaló kártya */
+.book{background:var(--paper);color:var(--txt);border-radius:28px;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.35);scroll-margin-top:24px}
+.book h2{font:800 30px/1.2 var(--t-display);font-variation-settings:"opsz" 32;color:var(--ink);margin-bottom:6px}
+.prog{display:flex;gap:6px;margin:14px 0 22px}
+.prog i{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.prog i.on{background:var(--acc)}
+.lep{display:none}
+.lep.on{display:block;animation:be .35s ease}
+@keyframes be{from{opacity:0;transform:translateY(6px)}}
+.lep-c{font-weight:700;font-size:15px;color:var(--txt-2);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);border-radius:14px;padding:11px 15px;font-weight:600;font-size:15px;background:#fff;transition:border-color .15s, background .15s}
+.chip:hover{border-color:var(--acc)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.chip:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.napok{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;scrollbar-width:thin}
+.nap{flex:0 0 auto;width:64px;border:1.5px solid var(--line);border-radius:14px;padding:9px 0;text-align:center;background:#fff}
+.nap small{display:block;font-size:12px;font-weight:700;text-transform:uppercase;color:var(--txt-2);letter-spacing:.04em}
+.nap b{display:block;font:700 22px/1.2 var(--t-body);font-variant-numeric:lining-nums tabular-nums}
+.nap[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.nap[aria-pressed=true] small{color:var(--mint)}
+.orak{display:grid;grid-template-columns:repeat(4, 1fr);gap:8px}
+.orak .chip{text-align:center;padding:10px 0;font-variant-numeric:tabular-nums}
+.nincs{font-size:15px;color:var(--txt-2);padding:10px 0}
+.mezo{display:block;margin-bottom:12px}
+.mezo span{display:block;font-size:14px;font-weight:700;color:var(--txt-2);margin-bottom:6px}
+.mezo input{width:100%;font:500 17px var(--t-body);padding:13px 15px;border:1.5px solid var(--line);border-radius:14px;background:#fff;color:var(--txt)}
+.mezo input:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:transparent}
+.osszeg{background:var(--mint-2);border-radius:14px;padding:12px 15px;font-size:15px;margin-bottom:14px;color:var(--ink);font-weight:600}
+.lab-gombok{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.g-elso{background:var(--ink);color:var(--cream);border-radius:99px;padding:13px 24px;font-weight:700;font-size:15px}
+.g-elso:disabled{opacity:.35;cursor:not-allowed}
+.g-masod{color:var(--txt-2);font-weight:700;font-size:15px;padding:13px 4px}
+.ok-ikon{width:52px;height:52px;border-radius:50%;background:var(--mint);display:grid;place-items:center;margin-bottom:14px}
+.ok h3{font:600 24px/1.25 var(--t-serif);color:var(--ink);margin-bottom:8px}
+.ok p{color:var(--txt-2);font-size:16px}
+
+/* rácsúszó krém lap */
+.lap{background:var(--cream);border-radius:44px 44px 0 0;margin-top:-48px;position:relative;z-index:2;box-shadow:0 -18px 40px rgba(8,40,41,.18)}
+section{padding:110px 0}
+.sec-fej{max-width:640px;margin-bottom:54px}
+.sec-fej .eyebrow{color:var(--acc)}
+h2.cim{font:800 clamp(38px, 4.6vw, 62px)/1.14 var(--t-display);font-variation-settings:"opsz" 72;color:var(--ink);margin:12px 0 16px;text-wrap:balance}
+.sec-fej p{font:500 20px/1.55 var(--t-serif);color:var(--txt-2)}
+
+.kezek{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px}
+.kez{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:30px 28px 32px}
+.kez-n{font:700 15px var(--t-body);color:var(--acc);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.kez h3{font:600 26px/1.25 var(--t-serif);color:var(--ink);margin:14px 0 10px}
+.kez p{color:var(--txt-2);font-size:16px}
+
+.elso{background:var(--ink);color:var(--cream);border-radius:44px;margin:0 16px}
+.elso .eyebrow{color:var(--mint)}
+.elso h2.cim{color:var(--cream)}
+.lepesek{display:grid;grid-template-columns:repeat(3, 1fr);gap:40px;counter-reset:l}
+.lepes{border-top:1.5px solid rgba(169,216,203,.35);padding-top:24px}
+.lepes::before{counter-increment:l;content:counter(l);display:block;font:800 64px/1.1 var(--t-display);font-variation-settings:"opsz" 12;font-weight:700;color:var(--mint);margin-bottom:14px;font-variant-numeric:lining-nums}
+.lepes h3{font:600 24px/1.3 var(--t-serif);margin-bottom:8px}
+.lepes p{color:rgba(245,241,232,.82);font-size:16px}
+
+.kap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.adat{display:grid;grid-template-columns:max-content 1fr;gap:18px 28px;font-size:18px}
+.adat dt{font-size:14px;font-weight:700;color:var(--txt-2);text-transform:uppercase;letter-spacing:.06em;padding-top:4px}
+.adat dd a{color:var(--acc);font-weight:700;text-decoration:none;font-variant-numeric:tabular-nums}
+.adat dd.halk{color:var(--txt-2)}
+.terkep{border-radius:28px;overflow:hidden;background:var(--mint-2);min-height:340px;display:grid;place-items:center;text-align:center;padding:24px}
+.terkep iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.terkep p{font-size:14px;color:var(--txt-2);margin-top:12px}
+.terkep .g-elso{display:inline-block}
+.terkep.betoltve{padding:0;display:block}
+
+footer{padding:40px 0 60px;font-size:14px;color:var(--txt-2)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+
+/* mobil hívógomb — alsó horgony, saját réteg */
+.mob-cta{display:none}
+
+/* reveal — két irányba */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease var(--d,0ms), transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.rv.shown{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.lep.on{animation:none}}
+
+@media (max-width:1020px){
+  .nav{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .kezek{grid-template-columns:1fr 1fr}
+  .lepesek{grid-template-columns:1fr;gap:28px}
+  .kap{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 36px)}
+  .hd{padding:16px 0}
+  .hd-tel{display:none}
+  .logo b{font-size:19px}
+  .hero{padding:120px 0 110px}
+  .book{padding:22px 18px;border-radius:22px}
+  .orak{grid-template-columns:repeat(3, 1fr)}
+  .lap{border-radius:28px 28px 0 0}
+  section{padding:76px 0}
+  .kezek{grid-template-columns:1fr}
+  .elso{margin:0 8px;border-radius:28px}
+  .adat{grid-template-columns:1fr;gap:4px 0}
+  .adat dd{margin-bottom:14px}
+  footer{padding-bottom:110px}
+  .mob-cta{display:flex;position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:20;gap:10px;transform:translate3d(0,0,0);will-change:transform}
+  .mob-cta a{flex:1;min-height:52px;border-radius:99px;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(8,40,41,.3)}
+  .mob-cta .m1{background:var(--ink);color:var(--cream)}
+  .mob-cta .m2{background:var(--mint);color:var(--ink)}
+  .mob-cta{transition:opacity .25s, transform .25s}
+  .mob-cta.rejt{opacity:0;transform:translate3d(0,24px,0);pointer-events:none}
+}
+</style>
+</head>
+<body>
+<div class="demo" data-i18n="demo">Látványterv — a szövegek mintaszövegek, a foglalás bemutató.</div>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Lőrinczi Dental</b><small data-i18n="varos">Marosvásárhely</small></a>
+    <nav class="nav" aria-label="Fő menü">
+      <a href="#kezelesek" data-i18n="nav_kez">Kezelések</a>
+      <a href="#foglalas" data-i18n="nav_fog">Foglalás</a>
+      <a href="#elso" data-i18n="nav_elso">Első alkalom</a>
+      <a href="#elerhetoseg" data-i18n="nav_kap">Elérhetőség</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Nyelv"><button data-l="hu" aria-pressed="true">HU</button><button data-l="ro" aria-pressed="false">RO</button></div>
+    <a class="hd-tel" href="tel:+40265215117">0265 215 117</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:140px">
+  <div class="wrap">
+    <div>
+      <span data-i18n="eyebrow" class="eyebrow">Fogorvosi rendelő · Marosvásárhely</span>
+      <h1 class="nev">Lőrinczi Dental<span class="alc" data-i18n="alcim">Fogászat</span></h1>
+      <p data-i18n="lead" class="lead">Foglaljon időpontot online, akár este vagy hétvégén is: kiválasztja a kezelést és a szabad időpontot, mi pedig visszaigazoljuk.</p>
+      <div class="ctas">
+        <a class="btn btn-1" href="#foglalas" data-i18n="cta1">Időpontot foglalok</a>
+        <a class="btn btn-2" href="tel:+40265215117" data-i18n="cta2">Hívás: 0265 215 117</a>
+      </div>
+      <p data-i18n="ertekeles" class="rate">5 ★ a Google-on</p>
+    </div>
+
+    <div class="book" id="foglalas" aria-live="polite">
+      <h2 data-i18n="b_cim">Online időpontfoglalás</h2>
+      <div class="prog"><i class="on"></i><i></i><i></i></div>
+
+      <div class="lep on" data-lep="1">
+        <p data-i18n="b_l1" class="lep-c">1 · Mi a gond?</p>
+        <div class="chips" id="kezChips"></div>
+        <div class="lab-gombok"><span></span><button class="g-elso" data-tovabb="2" disabled data-i18n="b_tovabb">Tovább</button></div>
+      </div>
+
+      <div class="lep" data-lep="2">
+        <p data-i18n="b_l2" class="lep-c">2 · Nap és időpont</p>
+        <div class="napok" id="napok"></div>
+        <div class="orak" id="orak"></div>
+        <div class="lab-gombok"><button class="g-masod" data-vissza="1" data-i18n="b_vissza">Vissza</button><button class="g-elso" data-tovabb="3" disabled data-i18n="b_tovabb">Tovább</button></div>
+      </div>
+
+      <div class="lep" data-lep="3">
+        <p data-i18n="b_l3" class="lep-c">3 · Az Ön adatai</p>
+        <div class="osszeg" id="osszeg"></div>
+        <label class="mezo"><span data-i18n="b_nev">Név</span><input id="fNev" autocomplete="off"></label>
+        <label class="mezo"><span data-i18n="b_tel">Telefonszám</span><input id="fTel" inputmode="tel" autocomplete="off"></label>
+        <div class="lab-gombok"><button class="g-masod" data-vissza="2" data-i18n="b_vissza">Vissza</button><button class="g-elso" id="kuld" disabled data-i18n="b_kuld">Időpont kérése</button></div>
+      </div>
+
+      <div class="lep ok" data-lep="4">
+        <div class="ok-ikon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E3A3B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3 data-i18n="b_ok_cim">Így működne élesben</h3>
+        <p data-i18n="b_ok">A kérés a rendelő naptárába kerül, Ön pedig e-mailben vagy telefonon visszaigazolást kap. Ez a látványterv nem küld el semmit.</p>
+        <div class="lab-gombok"><span></span><button class="g-masod" id="ujra" data-i18n="b_ujra">Újrakezdem</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lap">
+<section id="kezelesek">
+  <div class="wrap">
+    <div class="sec-fej rv">
+      <span data-i18n="k_eyebrow" class="eyebrow">Kezelések</span>
+      <h2 data-i18n="k_cim" class="cim">Amiben segítünk</h2>
+      <p data-i18n="k_lead">A pontos lista a rendelővel egyeztetve kerül fel — itt a leggyakoribbak.</p>
+    </div>
+    <div class="kezek">
+        <article class="kez rv" style="--d:0ms">
+          <span class="kez-n">01</span>
+          <h3 data-i18n="kz0c">Kontroll és fogkő-eltávolítás</h3>
+          <p data-i18n="kz0">Évente egyszer-kétszer: átnézzük a fogakat, eltávolítjuk a fogkövet, és megmondjuk, kell-e bármi más.</p>
+        </article>
+        <article class="kez rv" style="--d:60ms">
+          <span class="kez-n">02</span>
+          <h3 data-i18n="kz1c">Tömés</h3>
+          <p data-i18n="kz1">Fogszínű tömőanyaggal, hogy ne látsszon. A kezelés előtt elmondjuk, mire számíthat.</p>
+        </article>
+        <article class="kez rv" style="--d:120ms">
+          <span class="kez-n">03</span>
+          <h3 data-i18n="kz2c">Gyökérkezelés</h3>
+          <p data-i18n="kz2">Ha a fog belseje gyulladt, a gyökérkezeléssel a fog megmenthető.</p>
+        </article>
+        <article class="kez rv" style="--d:180ms">
+          <span class="kez-n">04</span>
+          <h3 data-i18n="kz3c">Fogpótlás</h3>
+          <p data-i18n="kz3">Korona, híd, kivehető pótlás. Úgy tervezzük meg, hogy kényelmes legyen és természetesen nézzen ki.</p>
+        </article>
+        <article class="kez rv" style="--d:240ms">
+          <span class="kez-n">05</span>
+          <h3 data-i18n="kz4c">Fogfehérítés</h3>
+          <p data-i18n="kz4">Rendelői fehérítés vagy otthoni sín. Előtte megnézzük, melyik illik Önhöz.</p>
+        </article>
+        <article class="kez rv" style="--d:300ms">
+          <span class="kez-n">06</span>
+          <h3 data-i18n="kz5c">Foghúzás</h3>
+          <p data-i18n="kz5">Ha már nem menthető a fog. Érzéstelenítéssel, utána pontos tanácsokkal.</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="elso" id="elso">
+  <div class="wrap">
+    <div class="sec-fej rv">
+      <span data-i18n="e_eyebrow" class="eyebrow">Első alkalom</span>
+      <h2 data-i18n="e_cim" class="cim">Mire számíthat az első látogatáskor?</h2>
+    </div>
+    <div class="lepesek">
+      <div class="lepes rv"><h3 data-i18n="e1c">Időpont pár kattintással</h3><p data-i18n="e1">Nem kell telefonálni rendelési időben: online kiválasztja a szabad időpontot.</p></div>
+      <div class="lepes rv" style="--d:90ms"><h3 data-i18n="e2c">Átnézés és terv</h3><p data-i18n="e2">Megnézzük a fogakat, és érthetően elmondjuk, mi a teendő és mennyibe kerül.</p></div>
+      <div class="lepes rv" style="--d:180ms"><h3 data-i18n="e3c">Kezelés, ha Ön is úgy dönt</h3><p data-i18n="e3">Csak akkor kezdünk bele, ha mindent értett és rábólintott.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="elerhetoseg">
+  <div class="wrap kap">
+    <div class="rv">
+      <div class="sec-fej" style="margin-bottom:34px">
+        <span data-i18n="kap_eyebrow" class="eyebrow">Elérhetőség</span>
+        <h2 data-i18n="kap_cim" class="cim">Itt talál meg minket</h2>
+      </div>
+      <dl class="adat">
+        <dt data-i18n="kap_cim_l">Cím</dt><dd>Str. Argeșului 28, Târgu Mureș</dd>
+        <dt data-i18n="kap_tel_l">Telefon</dt><dd><a href="tel:+40265215117">0265 215 117</a></dd>
+        <dt data-i18n="kap_ny_l">Rendelési idő</dt><dd class="halk" data-i18n="kap_ny">Hamarosan — a rendelővel egyeztetjük.</dd>
+        <dt>Facebook</dt><dd><a href="https://www.facebook.com/lorinczidental/" target="_blank" rel="noopener" data-i18n="kap_fb">Facebook-oldal</a></dd>
+      </dl>
+    </div>
+    <div class="terkep rv" id="terkep" style="--d:120ms">
+      <div>
+        <button class="g-elso" id="terkepBtn" data-i18n="terkep">Térkép betöltése</button>
+        <p data-i18n="terkep_info">A térkép a Google-től töltődik be, csak ha rákattint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© 2026 Lőrinczi Dental · <span data-i18n="varos">Marosvásárhely</span></span><span data-i18n="lab">Látványterv · László Bence</span></div>
+</footer>
+</div>
+</main>
+
+<div class="mob-cta">
+  <a class="m1" href="#foglalas" data-i18n="cta1">Időpontot foglalok</a>
+  <a class="m2" href="tel:+40265215117" data-i18n="hivas">Hívás</a>
+</div>
+
+<script>
+const SZ = {"hu":{"demo":"Látványterv — a szövegek mintaszövegek, a foglalás bemutató.","nav_kez":"Kezelések","nav_fog":"Foglalás","nav_elso":"Első alkalom","nav_kap":"Elérhetőség","hivas":"Hívás","eyebrow":"Fogorvosi rendelő · Marosvásárhely","lead":"Foglaljon időpontot online, akár este vagy hétvégén is: kiválasztja a kezelést és a szabad időpontot, mi pedig visszaigazoljuk.","cta1":"Időpontot foglalok","cta2":"Hívás: 0265 215 117","ertekeles":"5 ★ a Google-on","b_cim":"Online időpontfoglalás","b_l1":"1 · Mi a gond?","b_l2":"2 · Nap és időpont","b_l3":"3 · Az Ön adatai","b_nev":"Név","b_tel":"Telefonszám","b_tovabb":"Tovább","b_vissza":"Vissza","b_kuld":"Időpont kérése","b_nincs":"Erre a napra már nincs szabad időpont.","b_ok_cim":"Így működne élesben","b_ok":"A kérés a rendelő naptárába kerül, Ön pedig e-mailben vagy telefonon visszaigazolást kap. Ez a látványterv nem küld el semmit.","b_ujra":"Újrakezdem","k_eyebrow":"Kezelések","k_cim":"Amiben segítünk","k_lead":"A pontos lista a rendelővel egyeztetve kerül fel — itt a leggyakoribbak.","e_eyebrow":"Első alkalom","e_cim":"Mire számíthat az első látogatáskor?","e1c":"Időpont pár kattintással","e1":"Nem kell telefonálni rendelési időben: online kiválasztja a szabad időpontot.","e2c":"Átnézés és terv","e2":"Megnézzük a fogakat, és érthetően elmondjuk, mi a teendő és mennyibe kerül.","e3c":"Kezelés, ha Ön is úgy dönt","e3":"Csak akkor kezdünk bele, ha mindent értett és rábólintott.","kap_eyebrow":"Elérhetőség","kap_cim":"Itt talál meg minket","kap_cim_l":"Cím","kap_tel_l":"Telefon","kap_ny_l":"Rendelési idő","kap_ny":"Hamarosan — a rendelővel egyeztetjük.","kap_fb":"Facebook-oldal","terkep":"Térkép betöltése","terkep_info":"A térkép a Google-től töltődik be, csak ha rákattint.","lab":"Látványterv · László Bence","kz0c":"Kontroll és fogkő-eltávolítás","kz0":"Évente egyszer-kétszer: átnézzük a fogakat, eltávolítjuk a fogkövet, és megmondjuk, kell-e bármi más.","kz1c":"Tömés","kz1":"Fogszínű tömőanyaggal, hogy ne látsszon. A kezelés előtt elmondjuk, mire számíthat.","kz2c":"Gyökérkezelés","kz2":"Ha a fog belseje gyulladt, a gyökérkezeléssel a fog megmenthető.","kz3c":"Fogpótlás","kz3":"Korona, híd, kivehető pótlás. Úgy tervezzük meg, hogy kényelmes legyen és természetesen nézzen ki.","kz4c":"Fogfehérítés","kz4":"Rendelői fehérítés vagy otthoni sín. Előtte megnézzük, melyik illik Önhöz.","kz5c":"Foghúzás","kz5":"Ha már nem menthető a fog. Érzéstelenítéssel, utána pontos tanácsokkal.","alcim":"Fogászat","varos":"Marosvásárhely"},"ro":{"demo":"Machetă — textele sunt exemple, programarea este demonstrativă.","nav_kez":"Tratamente","nav_fog":"Programare","nav_elso":"Prima vizită","nav_kap":"Contact","hivas":"Sună","eyebrow":"Cabinet stomatologic · Târgu Mureș","lead":"Programați-vă online, chiar și seara sau în weekend: alegeți tratamentul și ora liberă, iar noi vă confirmăm.","cta1":"Mă programez","cta2":"Sună: 0265 215 117","ertekeles":"5 ★ pe Google","b_cim":"Programare online","b_l1":"1 · Ce vă supără?","b_l2":"2 · Ziua și ora","b_l3":"3 · Datele dvs.","b_nev":"Nume","b_tel":"Telefon","b_tovabb":"Continuă","b_vissza":"Înapoi","b_kuld":"Cer programarea","b_nincs":"Pentru această zi nu mai sunt ore libere.","b_ok_cim":"Așa ar funcționa pe site-ul real","b_ok":"Cererea ajunge în calendarul cabinetului, iar dvs. primiți confirmare prin e-mail sau telefon. Această machetă nu trimite nimic.","b_ujra":"O iau de la capăt","k_eyebrow":"Tratamente","k_cim":"Cu ce vă putem ajuta","k_lead":"Lista exactă se stabilește cu cabinetul — aici sunt cele mai frecvente.","e_eyebrow":"Prima vizită","e_cim":"La ce să vă așteptați prima dată?","e1c":"Programare în câteva clicuri","e1":"Nu trebuie să sunați în timpul programului: alegeți online ora liberă.","e2c":"Consult și plan","e2":"Verificăm dinții și vă explicăm clar ce e de făcut și cât costă.","e3c":"Tratament, dacă și dvs. doriți","e3":"Începem doar după ce ați înțeles totul și ați fost de acord.","kap_eyebrow":"Contact","kap_cim":"Unde ne găsiți","kap_cim_l":"Adresă","kap_tel_l":"Telefon","kap_ny_l":"Program","kap_ny":"În curând — îl stabilim cu cabinetul.","kap_fb":"Pagina de Facebook","terkep":"Încarcă harta","terkep_info":"Harta se încarcă de la Google doar dacă dați clic.","lab":"Machetă · László Bence","kz0c":"Control și detartraj","kz0":"O dată sau de două ori pe an: verificăm dinții, îndepărtăm tartrul și vă spunem dacă mai e nevoie de ceva.","kz1c":"Obturații","kz1":"Cu material de culoarea dintelui, ca să nu se vadă. Înainte de tratament vă explicăm la ce să vă așteptați.","kz2c":"Tratament de canal","kz2":"Dacă interiorul dintelui este inflamat, tratamentul de canal poate salva dintele.","kz3c":"Proteze dentare","kz3":"Coroană, punte, proteză mobilă. O planificăm să fie comodă și să arate natural.","kz4c":"Albire dentară","kz4":"Albire în cabinet sau gutieră pentru acasă. Înainte verificăm care vi se potrivește.","kz5c":"Extracții","kz5":"Când dintele nu mai poate fi salvat. Cu anestezie și sfaturi clare pentru după.","alcim":"Stomatologie","varos":"Târgu Mureș"}};
+const KEZ = {"hu":["Kontroll","Fáj a fogam","Tömés","Fogkő-eltávolítás","Fogfehérítés","Egyéb"],"ro":["Control","Mă doare dintele","Obturație","Detartraj","Albire","Altceva"]};
+const MAPS = 'https://www.google.com/maps?q=Str.%20Arge%C8%99ului%2028%2C%20T%C3%A2rgu%20Mure%C8%99&output=embed';
+let lang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('fog-lang') || 'hu';
+if (!SZ[lang]) lang = 'hu';
+const st = { kez: null, nap: null, ora: null, lep: 1 };
+
+function forditas() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const v = SZ[lang][el.dataset.i18n]; if (v != null) el.textContent = v; });
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === lang));
+  rajzKez(); rajzNapok(); rajzOrak(); osszeg();
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.l; localStorage.setItem('fog-lang', lang); forditas(); });
+
+// foglaló bemutató
+function napLista() {
+  const out = []; const d = new Date(); d.setHours(0, 0, 0, 0);
+  while (out.length < 12) { d.setDate(d.getDate() + 1); const w = d.getDay(); if (w && w < 6) out.push(new Date(d)); }
+  return out;
+}
+const NAPOK = napLista();
+const ORAK = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','13:00','13:30','14:00','14:30','15:00','15:30','16:00'];
+function foglalt(nap, i) { const s = nap.getDate() * 31 + nap.getMonth() * 7 + i * 13; return (s * 2654435761 >>> 0) % 100 < (nap === NAPOK[0] ? 80 : 42); }
+function loc() { return lang === 'ro' ? 'ro-RO' : 'hu-HU'; }
+
+function rajzKez() {
+  const box = document.getElementById('kezChips'); box.innerHTML = '';
+  KEZ[lang].forEach((n, i) => { const b = document.createElement('button'); b.className = 'chip'; b.textContent = n; b.setAttribute('aria-pressed', st.kez === i);
+    b.onclick = () => { st.kez = i; rajzKez(); gomb(1); }; box.appendChild(b); });
+  gomb(1);
+}
+function rajzNapok() {
+  const box = document.getElementById('napok'); box.innerHTML = '';
+  NAPOK.forEach((d, i) => { const b = document.createElement('button'); b.className = 'nap'; b.setAttribute('aria-pressed', st.nap === i);
+    b.innerHTML = '<small>' + d.toLocaleDateString(loc(), { weekday: 'short' }).replace('.', '') + '</small><b>' + d.getDate() + '</b>';
+    b.title = d.toLocaleDateString(loc(), { month: 'long', day: 'numeric', weekday: 'long' });
+    b.onclick = () => { st.nap = i; st.ora = null; rajzNapok(); rajzOrak(); }; box.appendChild(b); });
+}
+function rajzOrak() {
+  const box = document.getElementById('orak'); box.innerHTML = '';
+  if (st.nap == null) { gomb(2); return; }
+  const nap = NAPOK[st.nap]; let szabad = 0;
+  ORAK.forEach((o, i) => { const b = document.createElement('button'); b.className = 'chip'; b.textContent = o; const f = foglalt(nap, i); b.disabled = f; if (!f) szabad++;
+    b.setAttribute('aria-pressed', st.ora === o); b.onclick = () => { st.ora = o; rajzOrak(); }; box.appendChild(b); });
+  if (!szabad) box.innerHTML = '<p class="nincs">' + SZ[lang].b_nincs + '</p>';
+  gomb(2);
+}
+function osszeg() {
+  const el = document.getElementById('osszeg'); if (st.kez == null || st.nap == null || !st.ora) { el.textContent = ''; return; }
+  el.textContent = KEZ[lang][st.kez] + ' · ' + NAPOK[st.nap].toLocaleDateString(loc(), { month: 'long', day: 'numeric', weekday: 'long' }) + ', ' + st.ora;
+}
+function gomb(l) {
+  const b = document.querySelector('[data-tovabb="' + (l + 1) + '"]'); if (!b) return;
+  b.disabled = l === 1 ? st.kez == null : !(st.nap != null && st.ora);
+}
+function lepj(n) {
+  st.lep = n;
+  document.querySelectorAll('.lep').forEach(el => el.classList.toggle('on', +el.dataset.lep === n));
+  document.querySelectorAll('.prog i').forEach((el, i) => el.classList.toggle('on', i < Math.min(n, 3)));
+  if (n === 3) osszeg();
+}
+document.querySelectorAll('[data-tovabb]').forEach(b => b.onclick = () => lepj(+b.dataset.tovabb));
+document.querySelectorAll('[data-vissza]').forEach(b => b.onclick = () => lepj(+b.dataset.vissza));
+const fN = document.getElementById('fNev'), fT = document.getElementById('fTel'), kuld = document.getElementById('kuld');
+[fN, fT].forEach(i => i.oninput = () => kuld.disabled = !(fN.value.trim().length > 1 && fT.value.replace(/\D/g, '').length >= 9));
+kuld.onclick = () => lepj(4);
+document.getElementById('ujra').onclick = () => { st.kez = st.nap = st.ora = null; fN.value = fT.value = ''; kuld.disabled = true; forditas(); lepj(1); };
+
+// térkép csak kattintásra
+document.getElementById('terkepBtn').onclick = () => { const t = document.getElementById('terkep'); t.classList.add('betoltve'); t.innerHTML = '<iframe src="' + MAPS + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Térkép"></iframe>'; };
+
+// reveal két irányba
+const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('shown', e.isIntersecting)), { threshold: .12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+const mc=document.querySelector(".mob-cta");
+new IntersectionObserver(es=>es.forEach(e=>mc.classList.toggle("rejt",e.isIntersecting)),{threshold:.15}).observe(document.getElementById("foglalas"));
+
+forditas();
+</script>
+</body>
+</html>
