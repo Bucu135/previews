@@ -60,8 +60,29 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .btn-2:hover{border-color:var(--cream)}
 .rate{margin-top:26px;font-size:15px;color:rgba(245,241,232,.75);font-variant-numeric:lining-nums tabular-nums}
 
+.hero-kep{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/4.4;box-shadow:0 40px 90px rgba(0,0,0,.4)}
+.hero-kep img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-kep::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,40,41,.55))}
+.rate-kartya{position:absolute;left:20px;bottom:20px;z-index:2;background:rgba(251,249,244,.94);color:var(--ink);border-radius:20px;padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.rate-kartya b{font:800 34px/1 var(--t-display);font-variation-settings:"opsz" 10;font-variant-numeric:lining-nums}
+.rate-kartya span{font-size:14px;font-weight:600;line-height:1.35;color:var(--txt-2)}
+.rate-kartya i{font-style:normal;color:#C9932E;letter-spacing:1px;display:block;font-size:15px}
+.minta{position:absolute;right:14px;top:14px;z-index:2;font-size:12px;font-weight:700;color:#fff;background:rgba(8,40,41,.55);padding:5px 10px;border-radius:99px;letter-spacing:.02em}
+figure{position:relative}
+.fog-sec .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.fog-kep{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/5}
+.fog-kep img{width:100%;height:100%;object-fit:cover;object-position:60% 30%;display:block}
+.fog-jobb .sec-fej{margin-bottom:30px}
+.gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px}
+.gal figure{border-radius:24px;overflow:hidden;background:var(--mint-2)}
+.gal figure:first-child{grid-row:span 2}
+.gal figure:nth-child(4){grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.gal figure:hover img{transform:scale(1.04)}
+.kap-kep{border-radius:28px;overflow:hidden;aspect-ratio:16/10;margin-bottom:18px;position:relative}
+.kap-kep img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
 /* foglaló kártya */
-.book{background:var(--paper);color:var(--txt);border-radius:28px;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.35);scroll-margin-top:24px}
+.book{background:var(--paper);color:var(--txt);border-radius:28px;padding:30px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(8,40,41,.12);scroll-margin-top:24px}
 .book h2{font:800 30px/1.2 var(--t-display);font-variation-settings:"opsz" 32;color:var(--ink);margin-bottom:6px}
 .prog{display:flex;gap:6px;margin:14px 0 22px}
 .prog i{flex:1;height:4px;border-radius:4px;background:var(--line)}
@@ -148,6 +169,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .kezek{grid-template-columns:1fr 1fr}
   .lepesek{grid-template-columns:1fr;gap:28px}
   .kap{grid-template-columns:1fr}
+  .fog-sec .wrap{grid-template-columns:1fr}
+  .fog-kep{aspect-ratio:16/11}
+  .hero-kep{aspect-ratio:4/3.4}
 }
 @media (max-width:640px){
   .wrap{width:calc(100% - 36px)}
@@ -160,6 +184,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .lap{border-radius:28px 28px 0 0}
   section{padding:76px 0}
   .kezek{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:200px 160px 160px}
+  .gal figure:first-child{grid-row:auto;grid-column:span 2}
+  .gal figure:nth-child(4){grid-column:span 2}
+  .rate-kartya{left:12px;bottom:12px;padding:10px 14px}
+  .rate-kartya b{font-size:28px}
   .elso{margin:0 8px;border-radius:28px}
   .adat{grid-template-columns:1fr;gap:4px 0}
   .adat dd{margin-bottom:14px}
@@ -201,45 +230,56 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         <a class="btn btn-1" href="#foglalas" data-i18n="cta1">Időpontot foglalok</a>
         <a class="btn btn-2" href="tel:+40752376242" data-i18n="cta2">Hívás: 0752 376 242</a>
       </div>
-      <p data-i18n="ertekeles" class="rate">5 ★ a Google-on</p>
     </div>
 
-    <div class="book" id="foglalas" aria-live="polite">
-      <h2 data-i18n="b_cim">Online időpontfoglalás</h2>
-      <div class="prog"><i class="on"></i><i></i><i></i></div>
-
-      <div class="lep on" data-lep="1">
-        <p data-i18n="b_l1" class="lep-c">1 · Mi a gond?</p>
-        <div class="chips" id="kezChips"></div>
-        <div class="lab-gombok"><span></span><button class="g-elso" data-tovabb="2" disabled data-i18n="b_tovabb">Tovább</button></div>
-      </div>
-
-      <div class="lep" data-lep="2">
-        <p data-i18n="b_l2" class="lep-c">2 · Nap és időpont</p>
-        <div class="napok" id="napok"></div>
-        <div class="orak" id="orak"></div>
-        <div class="lab-gombok"><button class="g-masod" data-vissza="1" data-i18n="b_vissza">Vissza</button><button class="g-elso" data-tovabb="3" disabled data-i18n="b_tovabb">Tovább</button></div>
-      </div>
-
-      <div class="lep" data-lep="3">
-        <p data-i18n="b_l3" class="lep-c">3 · Az Ön adatai</p>
-        <div class="osszeg" id="osszeg"></div>
-        <label class="mezo"><span data-i18n="b_nev">Név</span><input id="fNev" autocomplete="off"></label>
-        <label class="mezo"><span data-i18n="b_tel">Telefonszám</span><input id="fTel" inputmode="tel" autocomplete="off"></label>
-        <div class="lab-gombok"><button class="g-masod" data-vissza="2" data-i18n="b_vissza">Vissza</button><button class="g-elso" id="kuld" disabled data-i18n="b_kuld">Időpont kérése</button></div>
-      </div>
-
-      <div class="lep ok" data-lep="4">
-        <div class="ok-ikon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E3A3B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-        <h3 data-i18n="b_ok_cim">Így működne élesben</h3>
-        <p data-i18n="b_ok">A kérés a rendelő naptárába kerül, Ön pedig e-mailben vagy telefonon visszaigazolást kap. Ez a látványterv nem küld el semmit.</p>
-        <div class="lab-gombok"><span></span><button class="g-masod" id="ujra" data-i18n="b_ujra">Újrakezdem</button></div>
-      </div>
+    <div class="hero-kep">
+      <img class="" src="img/s177733-1600.webp" srcset="img/s177733-800.webp 800w, img/s177733-1600.webp 1600w" sizes="(max-width:1020px) 100vw, 46vw" alt="Fogorvosi Rendelő" fetchpriority="high" decoding="async"><span class="minta" data-i18n="minta">Mintakép</span>
+      <div class="rate-kartya"><b>5</b><span><i>★★★★★</i><span data-i18n="rate_k">1 Google-értékelés</span></span></div>
     </div>
   </div>
 </section>
 
 <div class="lap">
+<section class="fog-sec" id="foglalas">
+  <div class="wrap">
+    <figure class="fog-kep rv"><img class="" src="img/s178586-1600.webp" srcset="img/s178586-800.webp 800w, img/s178586-1600.webp 1600w" sizes="(max-width:1020px) 100vw, 42vw" alt="" loading="lazy" decoding="async"><span class="minta" data-i18n="minta">Mintakép</span></figure>
+    <div class="fog-jobb rv" style="--d:100ms">
+      <div class="sec-fej"><span data-i18n="f_eyebrow" class="eyebrow">Online foglalás</span><h2 data-i18n="f_cim" class="cim">Időpont, amikor Önnek jó</h2><p data-i18n="f_lead">Nem kell rendelési időben telefonálni. Válassza ki, mi a gond, és a szabad időpontok közül azt, ami Önnek megfelel — mi visszaigazoljuk.</p></div>
+      <div class="book" aria-live="polite">
+        <h2 data-i18n="b_cim">Online időpontfoglalás</h2>
+        <div class="prog"><i class="on"></i><i></i><i></i></div>
+  
+        <div class="lep on" data-lep="1">
+          <p data-i18n="b_l1" class="lep-c">1 · Mi a gond?</p>
+          <div class="chips" id="kezChips"></div>
+          <div class="lab-gombok"><span></span><button class="g-elso" data-tovabb="2" disabled data-i18n="b_tovabb">Tovább</button></div>
+        </div>
+  
+        <div class="lep" data-lep="2">
+          <p data-i18n="b_l2" class="lep-c">2 · Nap és időpont</p>
+          <div class="napok" id="napok"></div>
+          <div class="orak" id="orak"></div>
+          <div class="lab-gombok"><button class="g-masod" data-vissza="1" data-i18n="b_vissza">Vissza</button><button class="g-elso" data-tovabb="3" disabled data-i18n="b_tovabb">Tovább</button></div>
+        </div>
+  
+        <div class="lep" data-lep="3">
+          <p data-i18n="b_l3" class="lep-c">3 · Az Ön adatai</p>
+          <div class="osszeg" id="osszeg"></div>
+          <label class="mezo"><span data-i18n="b_nev">Név</span><input id="fNev" autocomplete="off"></label>
+          <label class="mezo"><span data-i18n="b_tel">Telefonszám</span><input id="fTel" inputmode="tel" autocomplete="off"></label>
+          <div class="lab-gombok"><button class="g-masod" data-vissza="2" data-i18n="b_vissza">Vissza</button><button class="g-elso" id="kuld" disabled data-i18n="b_kuld">Időpont kérése</button></div>
+        </div>
+  
+        <div class="lep ok" data-lep="4">
+          <div class="ok-ikon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E3A3B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3 data-i18n="b_ok_cim">Így működne élesben</h3>
+          <p data-i18n="b_ok">A kérés a rendelő naptárába kerül, Ön pedig e-mailben vagy telefonon visszaigazolást kap. Ez a látványterv nem küld el semmit.</p>
+          <div class="lab-gombok"><span></span><button class="g-masod" id="ujra" data-i18n="b_ujra">Újrakezdem</button></div>
+        </div>
+      </div>
+      </div>
+  </div>
+</section>
 <section id="kezelesek">
   <div class="wrap">
     <div class="sec-fej rv">
@@ -282,6 +322,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   </div>
 </section>
 
+
+
 <section class="elso" id="elso">
   <div class="wrap">
     <div class="sec-fej rv">
@@ -310,11 +352,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         <dt>Facebook</dt><dd><a href="https://www.facebook.com/553018524773239" target="_blank" rel="noopener" data-i18n="kap_fb">Facebook-oldal</a></dd>
       </dl>
     </div>
-    <div class="terkep rv" id="terkep" style="--d:120ms">
+    <div class="rv" style="--d:120ms">
+    <div class="terkep" id="terkep">
       <div>
         <button class="g-elso" id="terkepBtn" data-i18n="terkep">Térkép betöltése</button>
         <p data-i18n="terkep_info">A térkép a Google-től töltődik be, csak ha rákattint.</p>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -331,7 +375,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 </div>
 
 <script>
-const SZ = {"hu":{"demo":"Látványterv — a szövegek mintaszövegek, a foglalás bemutató.","nav_kez":"Kezelések","nav_fog":"Foglalás","nav_elso":"Első alkalom","nav_kap":"Elérhetőség","hivas":"Hívás","eyebrow":"Fogorvosi rendelő · Csíkszentkirály","lead":"Foglaljon időpontot online, akár este vagy hétvégén is: kiválasztja a kezelést és a szabad időpontot, mi pedig visszaigazoljuk.","cta1":"Időpontot foglalok","cta2":"Hívás: 0752 376 242","ertekeles":"5 ★ a Google-on","b_cim":"Online időpontfoglalás","b_l1":"1 · Mi a gond?","b_l2":"2 · Nap és időpont","b_l3":"3 · Az Ön adatai","b_nev":"Név","b_tel":"Telefonszám","b_tovabb":"Tovább","b_vissza":"Vissza","b_kuld":"Időpont kérése","b_nincs":"Erre a napra már nincs szabad időpont.","b_ok_cim":"Így működne élesben","b_ok":"A kérés a rendelő naptárába kerül, Ön pedig e-mailben vagy telefonon visszaigazolást kap. Ez a látványterv nem küld el semmit.","b_ujra":"Újrakezdem","k_eyebrow":"Kezelések","k_cim":"Amiben segítünk","k_lead":"A pontos lista a rendelővel egyeztetve kerül fel — itt a leggyakoribbak.","e_eyebrow":"Első alkalom","e_cim":"Mire számíthat az első látogatáskor?","e1c":"Időpont pár kattintással","e1":"Nem kell telefonálni rendelési időben: online kiválasztja a szabad időpontot.","e2c":"Átnézés és terv","e2":"Megnézzük a fogakat, és érthetően elmondjuk, mi a teendő és mennyibe kerül.","e3c":"Kezelés, ha Ön is úgy dönt","e3":"Csak akkor kezdünk bele, ha mindent értett és rábólintott.","kap_eyebrow":"Elérhetőség","kap_cim":"Itt talál meg minket","kap_cim_l":"Cím","kap_tel_l":"Telefon","kap_ny_l":"Rendelési idő","kap_ny":"Hamarosan — a rendelővel egyeztetjük.","kap_fb":"Facebook-oldal","terkep":"Térkép betöltése","terkep_info":"A térkép a Google-től töltődik be, csak ha rákattint.","lab":"Látványterv · László Bence","kz0c":"Kontroll és fogkő-eltávolítás","kz0":"Évente egyszer-kétszer: átnézzük a fogakat, eltávolítjuk a fogkövet, és megmondjuk, kell-e bármi más.","kz1c":"Tömés","kz1":"Fogszínű tömőanyaggal, hogy ne látsszon. A kezelés előtt elmondjuk, mire számíthat.","kz2c":"Gyökérkezelés","kz2":"Ha a fog belseje gyulladt, a gyökérkezeléssel a fog megmenthető.","kz3c":"Fogpótlás","kz3":"Korona, híd, kivehető pótlás. Úgy tervezzük meg, hogy kényelmes legyen és természetesen nézzen ki.","kz4c":"Fogfehérítés","kz4":"Rendelői fehérítés vagy otthoni sín. Előtte megnézzük, melyik illik Önhöz.","kz5c":"Foghúzás","kz5":"Ha már nem menthető a fog. Érzéstelenítéssel, utána pontos tanácsokkal.","alcim":"Csíkszentkirály","varos":"Csíkszentkirály"},"ro":{"demo":"Machetă — textele sunt exemple, programarea este demonstrativă.","nav_kez":"Tratamente","nav_fog":"Programare","nav_elso":"Prima vizită","nav_kap":"Contact","hivas":"Sună","eyebrow":"Cabinet stomatologic · Sâncrăieni","lead":"Programați-vă online, chiar și seara sau în weekend: alegeți tratamentul și ora liberă, iar noi vă confirmăm.","cta1":"Mă programez","cta2":"Sună: 0752 376 242","ertekeles":"5 ★ pe Google","b_cim":"Programare online","b_l1":"1 · Ce vă supără?","b_l2":"2 · Ziua și ora","b_l3":"3 · Datele dvs.","b_nev":"Nume","b_tel":"Telefon","b_tovabb":"Continuă","b_vissza":"Înapoi","b_kuld":"Cer programarea","b_nincs":"Pentru această zi nu mai sunt ore libere.","b_ok_cim":"Așa ar funcționa pe site-ul real","b_ok":"Cererea ajunge în calendarul cabinetului, iar dvs. primiți confirmare prin e-mail sau telefon. Această machetă nu trimite nimic.","b_ujra":"O iau de la capăt","k_eyebrow":"Tratamente","k_cim":"Cu ce vă putem ajuta","k_lead":"Lista exactă se stabilește cu cabinetul — aici sunt cele mai frecvente.","e_eyebrow":"Prima vizită","e_cim":"La ce să vă așteptați prima dată?","e1c":"Programare în câteva clicuri","e1":"Nu trebuie să sunați în timpul programului: alegeți online ora liberă.","e2c":"Consult și plan","e2":"Verificăm dinții și vă explicăm clar ce e de făcut și cât costă.","e3c":"Tratament, dacă și dvs. doriți","e3":"Începem doar după ce ați înțeles totul și ați fost de acord.","kap_eyebrow":"Contact","kap_cim":"Unde ne găsiți","kap_cim_l":"Adresă","kap_tel_l":"Telefon","kap_ny_l":"Program","kap_ny":"În curând — îl stabilim cu cabinetul.","kap_fb":"Pagina de Facebook","terkep":"Încarcă harta","terkep_info":"Harta se încarcă de la Google doar dacă dați clic.","lab":"Machetă · László Bence","kz0c":"Control și detartraj","kz0":"O dată sau de două ori pe an: verificăm dinții, îndepărtăm tartrul și vă spunem dacă mai e nevoie de ceva.","kz1c":"Obturații","kz1":"Cu material de culoarea dintelui, ca să nu se vadă. Înainte de tratament vă explicăm la ce să vă așteptați.","kz2c":"Tratament de canal","kz2":"Dacă interiorul dintelui este inflamat, tratamentul de canal poate salva dintele.","kz3c":"Proteze dentare","kz3":"Coroană, punte, proteză mobilă. O planificăm să fie comodă și să arate natural.","kz4c":"Albire dentară","kz4":"Albire în cabinet sau gutieră pentru acasă. Înainte verificăm care vi se potrivește.","kz5c":"Extracții","kz5":"Când dintele nu mai poate fi salvat. Cu anestezie și sfaturi clare pentru după.","alcim":"Sâncrăieni","varos":"Sâncrăieni"}};
+const SZ = {"hu":{"demo":"Látványterv — a szövegek mintaszövegek, a foglalás bemutató.","nav_kez":"Kezelések","nav_fog":"Foglalás","nav_elso":"Első alkalom","nav_kap":"Elérhetőség","hivas":"Hívás","eyebrow":"Fogorvosi rendelő · Csíkszentkirály","lead":"Foglaljon időpontot online, akár este vagy hétvégén is: kiválasztja a kezelést és a szabad időpontot, mi pedig visszaigazoljuk.","cta1":"Időpontot foglalok","cta2":"Hívás: 0752 376 242","ertekeles":"5 ★ · 1 Google-értékelés","rate_k":"1 Google-értékelés","f_eyebrow":"Online foglalás","f_cim":"Időpont, amikor Önnek jó","f_lead":"Nem kell rendelési időben telefonálni. Válassza ki, mi a gond, és a szabad időpontok közül azt, ami Önnek megfelel — mi visszaigazoljuk.","g_eyebrow":"A rendelő","g_cim":"Nézzen be hozzánk","minta":"Mintakép","b_cim":"Online időpontfoglalás","b_l1":"1 · Mi a gond?","b_l2":"2 · Nap és időpont","b_l3":"3 · Az Ön adatai","b_nev":"Név","b_tel":"Telefonszám","b_tovabb":"Tovább","b_vissza":"Vissza","b_kuld":"Időpont kérése","b_nincs":"Erre a napra már nincs szabad időpont.","b_ok_cim":"Így működne élesben","b_ok":"A kérés a rendelő naptárába kerül, Ön pedig e-mailben vagy telefonon visszaigazolást kap. Ez a látványterv nem küld el semmit.","b_ujra":"Újrakezdem","k_eyebrow":"Kezelések","k_cim":"Amiben segítünk","k_lead":"A pontos lista a rendelővel egyeztetve kerül fel — itt a leggyakoribbak.","e_eyebrow":"Első alkalom","e_cim":"Mire számíthat az első látogatáskor?","e1c":"Időpont pár kattintással","e1":"Nem kell telefonálni rendelési időben: online kiválasztja a szabad időpontot.","e2c":"Átnézés és terv","e2":"Megnézzük a fogakat, és érthetően elmondjuk, mi a teendő és mennyibe kerül.","e3c":"Kezelés, ha Ön is úgy dönt","e3":"Csak akkor kezdünk bele, ha mindent értett és rábólintott.","kap_eyebrow":"Elérhetőség","kap_cim":"Itt talál meg minket","kap_cim_l":"Cím","kap_tel_l":"Telefon","kap_ny_l":"Rendelési idő","kap_ny":"Hamarosan — a rendelővel egyeztetjük.","kap_fb":"Facebook-oldal","terkep":"Térkép betöltése","terkep_info":"A térkép a Google-től töltődik be, csak ha rákattint.","lab":"Látványterv · László Bence","kz0c":"Kontroll és fogkő-eltávolítás","kz0":"Évente egyszer-kétszer: átnézzük a fogakat, eltávolítjuk a fogkövet, és megmondjuk, kell-e bármi más.","kz1c":"Tömés","kz1":"Fogszínű tömőanyaggal, hogy ne látsszon. A kezelés előtt elmondjuk, mire számíthat.","kz2c":"Gyökérkezelés","kz2":"Ha a fog belseje gyulladt, a gyökérkezeléssel a fog megmenthető.","kz3c":"Fogpótlás","kz3":"Korona, híd, kivehető pótlás. Úgy tervezzük meg, hogy kényelmes legyen és természetesen nézzen ki.","kz4c":"Fogfehérítés","kz4":"Rendelői fehérítés vagy otthoni sín. Előtte megnézzük, melyik illik Önhöz.","kz5c":"Foghúzás","kz5":"Ha már nem menthető a fog. Érzéstelenítéssel, utána pontos tanácsokkal.","alcim":"Csíkszentkirály","varos":"Csíkszentkirály"},"ro":{"demo":"Machetă — textele sunt exemple, programarea este demonstrativă.","nav_kez":"Tratamente","nav_fog":"Programare","nav_elso":"Prima vizită","nav_kap":"Contact","hivas":"Sună","eyebrow":"Cabinet stomatologic · Sâncrăieni","lead":"Programați-vă online, chiar și seara sau în weekend: alegeți tratamentul și ora liberă, iar noi vă confirmăm.","cta1":"Mă programez","cta2":"Sună: 0752 376 242","ertekeles":"5 ★ · 1 recenzii Google","rate_k":"1 recenzii Google","f_eyebrow":"Programare online","f_cim":"O oră care vă convine","f_lead":"Nu trebuie să sunați în timpul programului. Alegeți ce vă supără și ora liberă care vă convine — noi vă confirmăm.","g_eyebrow":"Cabinetul","g_cim":"Aruncați o privire","minta":"Imagine exemplu","b_cim":"Programare online","b_l1":"1 · Ce vă supără?","b_l2":"2 · Ziua și ora","b_l3":"3 · Datele dvs.","b_nev":"Nume","b_tel":"Telefon","b_tovabb":"Continuă","b_vissza":"Înapoi","b_kuld":"Cer programarea","b_nincs":"Pentru această zi nu mai sunt ore libere.","b_ok_cim":"Așa ar funcționa pe site-ul real","b_ok":"Cererea ajunge în calendarul cabinetului, iar dvs. primiți confirmare prin e-mail sau telefon. Această machetă nu trimite nimic.","b_ujra":"O iau de la capăt","k_eyebrow":"Tratamente","k_cim":"Cu ce vă putem ajuta","k_lead":"Lista exactă se stabilește cu cabinetul — aici sunt cele mai frecvente.","e_eyebrow":"Prima vizită","e_cim":"La ce să vă așteptați prima dată?","e1c":"Programare în câteva clicuri","e1":"Nu trebuie să sunați în timpul programului: alegeți online ora liberă.","e2c":"Consult și plan","e2":"Verificăm dinții și vă explicăm clar ce e de făcut și cât costă.","e3c":"Tratament, dacă și dvs. doriți","e3":"Începem doar după ce ați înțeles totul și ați fost de acord.","kap_eyebrow":"Contact","kap_cim":"Unde ne găsiți","kap_cim_l":"Adresă","kap_tel_l":"Telefon","kap_ny_l":"Program","kap_ny":"În curând — îl stabilim cu cabinetul.","kap_fb":"Pagina de Facebook","terkep":"Încarcă harta","terkep_info":"Harta se încarcă de la Google doar dacă dați clic.","lab":"Machetă · László Bence","kz0c":"Control și detartraj","kz0":"O dată sau de două ori pe an: verificăm dinții, îndepărtăm tartrul și vă spunem dacă mai e nevoie de ceva.","kz1c":"Obturații","kz1":"Cu material de culoarea dintelui, ca să nu se vadă. Înainte de tratament vă explicăm la ce să vă așteptați.","kz2c":"Tratament de canal","kz2":"Dacă interiorul dintelui este inflamat, tratamentul de canal poate salva dintele.","kz3c":"Proteze dentare","kz3":"Coroană, punte, proteză mobilă. O planificăm să fie comodă și să arate natural.","kz4c":"Albire dentară","kz4":"Albire în cabinet sau gutieră pentru acasă. Înainte verificăm care vi se potrivește.","kz5c":"Extracții","kz5":"Când dintele nu mai poate fi salvat. Cu anestezie și sfaturi clare pentru după.","alcim":"Sâncrăieni","varos":"Sâncrăieni"}};
 const KEZ = {"hu":["Kontroll","Fáj a fogam","Tömés","Fogkő-eltávolítás","Fogfehérítés","Egyéb"],"ro":["Control","Mă doare dintele","Obturație","Detartraj","Albire","Altceva"]};
 const MAPS = 'https://www.google.com/maps?q=Nr.%20143%2C%20S%C3%A2ncr%C4%83ieni&output=embed';
 let lang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('fog-lang') || 'hu';
